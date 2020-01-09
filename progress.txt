@@ -1,0 +1,45 @@
+2019-11-16 19:04:31 (File: puzzles.txt)
+Puzzles solved: 106
+Total time taken: 18.203644514083862
+Average time per puzzle: 0.1717324954158855
+Max time: 0.7011361122131348
+
+2019-11-18 19:26:45 (File: euler_sudokus.txt)
+Puzzles solved: 50
+Total time taken: 0.5983598232269287
+Average time per puzzle: 0.011967196464538574
+Max time: 0.02991962432861328
+
+
+==== Changed solve method from recursive to iterative ====
+
+2020-01-06 00:09:28 (File: puzzles.txt)
+Puzzles solved: 106
+Total time taken: 16.13437008857727
+Average time per puzzle: 0.1522110385714837
+Max time: 1.1658494472503662
+
+2020-01-06 00:09:31 (File: euler_sudokus.txt)
+Puzzles solved: 50
+Total time taken: 0.6533050537109375
+Average time per puzzle: 0.01306610107421875
+Max time: 0.044882774353027344
+
+2020-01-06 00:19:29 (File: puzzles.txt)
+Puzzles solved: 106
+Total time taken: 15.905497550964355
+Average time per puzzle: 0.15005186368834297
+Max time: 0.69325852394104
+
+2020-01-06 00:19:29 (File: euler_sudokus.txt)
+Puzzles solved: 50
+Total time taken: 0.6034326553344727
+Average time per puzzle: 0.012068653106689453
+Max time: 0.03788590431213379
+
+2020-01-06 00:19:37 (File: hardest.txt)
+Puzzles solved: 20
+Total time taken: 7.953799486160278
+Average time per puzzle: 0.3976899743080139
+Max time: 2.0656325817108154
+

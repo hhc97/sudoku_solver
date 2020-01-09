@@ -1,0 +1,47 @@
+Sample run of the program:
+
+Please type in row 1:-9--1-8
+Please type in row 2:713-59-2
+Please type in row 3:---3-2--9
+Please type in row 4:427
+Please type in row 5:--9---2
+Please type in row 6:------487
+Please type in row 7:9--5-8
+Please type in row 8:-3-29-748
+Please type in row 9:--2-4--5
+
+Input puzzle:
+*9*|*1*|8**
+713|*59|*2*
+***|3*2|**9
+---+---+---
+427|***|***
+**9|***|2**
+***|***|487
+---+---+---
+9**|5*8|***
+*3*|29*|748
+**2|*4*|*5*
+Solving...
+
+Solved!
+
+Solution:
+295|614|873
+713|859|624
+648|372|519
+---+---+---
+427|186|395
+859|437|261
+361|925|487
+---+---+---
+974|568|132
+536|291|748
+182|743|956
+
+Solved in 0.014966726303100586 seconds.
+
+Would you like to solve another puzzle? (enter 'y' to try again)
+Input response here: n
+
+Process finished with exit code 0
