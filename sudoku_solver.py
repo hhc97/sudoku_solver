@@ -312,4 +312,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    print('Welcome to Sudoku Solver v1.0 by Haocheng Hu\n')
     main()
