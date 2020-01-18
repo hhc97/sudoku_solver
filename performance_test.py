@@ -3,8 +3,9 @@ A module to test the performance of the solver by getting it to solve a set of p
 Checker correctness is not checked, only the solve times are recorded.
 """
 
-from sudoku_solver import SudokuPuzzle, depth_first_solve, time
 from datetime import datetime
+
+from sudoku_solver import SudokuPuzzle, depth_first_solve, time
 
 
 def test_performance(filename: str) -> None:

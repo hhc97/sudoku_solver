@@ -3,6 +3,7 @@ A set of basic unittests to ensure every revision of the solver works.
 """
 
 import unittest
+
 from sudoku_solver import SudokuPuzzle, depth_first_solve
 
 

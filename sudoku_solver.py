@@ -30,9 +30,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 from __future__ import annotations
-from typing import Dict, List, Optional, Set, Tuple
-from time import time
+
 from re import sub
+from time import time
+from typing import Dict, List, Optional, Set, Tuple
 
 
 class SudokuPuzzle:
