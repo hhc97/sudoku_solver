@@ -52,6 +52,19 @@ class TestSudoku(unittest.TestCase):
                               {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
         self.assertFalse(puzzle.is_solved(), 'is_solved returning True when should be False')
 
+    def test_solved_duplicate_subsquare(self):
+        puzzle = SudokuPuzzle(9, [['1', '2', '3', '7', '8', '9', '4', '5', '6'],
+                                  ['4', '5', '6', '1', '2', '3', '7', '8', '9'],
+                                  ['3', '1', '2', '9', '7', '8', '6', '4', '5'],
+                                  ['7', '8', '9', '4', '5', '6', '1', '2', '3'],
+                                  ['6', '4', '5', '3', '1', '2', '9', '7', '8'],
+                                  ['9', '7', '8', '6', '4', '5', '3', '1', '2'],
+                                  ['2', '3', '1', '8', '9', '7', '5', '6', '4'],
+                                  ['5', '6', '4', '2', '3', '1', '8', '9', '7'],
+                                  ['8', '9', '7', '5', '6', '4', '2', '3', '1']],
+                              {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
+        self.assertFalse(puzzle.is_solved(), 'is_solved returning True when should be False')
+
     def test_puzzle_empty(self):
         puzzle = SudokuPuzzle(9, [['*', '*', '*', '*', '*', '*', '*', '*', '*'],
                                   ['*', '*', '*', '*', '*', '*', '*', '*', '*'],
