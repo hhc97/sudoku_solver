@@ -23,7 +23,7 @@ class TestSudoku(unittest.TestCase):
                                   ['2', '3', '1', '8', '9', '7', '5', '6', '4'],
                                   ['5', '6', '4', '2', '3', '1', '8', '9', '7'],
                                   ['8', '9', '7', '5', '6', '4', '2', '3', '1']],
-                              {'4', '8', '2', '3', '6', '1', '5', '9', '7'})
+                              {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
         self.assertTrue(puzzle.is_solved(), 'is_solved returning False when should be True')
 
     def test_solved_duplicate_row(self):
@@ -36,7 +36,7 @@ class TestSudoku(unittest.TestCase):
                                   ['2', '3', '1', '8', '9', '7', '5', '6', '4'],
                                   ['5', '6', '4', '2', '3', '1', '8', '9', '7'],
                                   ['8', '9', '7', '5', '6', '4', '2', '3', '1']],
-                              {'4', '8', '2', '3', '6', '1', '5', '9', '7'})
+                              {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
         self.assertFalse(puzzle.is_solved(), 'is_solved returning True when should be False')
 
     def test_solved_duplicate_column(self):
@@ -49,7 +49,7 @@ class TestSudoku(unittest.TestCase):
                                   ['2', '3', '1', '8', '9', '7', '5', '6', '4'],
                                   ['5', '6', '4', '2', '3', '1', '8', '9', '7'],
                                   ['1', '9', '7', '5', '6', '4', '2', '3', '1']],
-                              {'4', '8', '2', '3', '6', '1', '5', '9', '7'})
+                              {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
         self.assertFalse(puzzle.is_solved(), 'is_solved returning True when should be False')
 
     def test_puzzle_empty(self):
@@ -62,7 +62,7 @@ class TestSudoku(unittest.TestCase):
                                   ['*', '*', '*', '*', '*', '*', '*', '*', '*'],
                                   ['*', '*', '*', '*', '*', '*', '*', '*', '*'],
                                   ['*', '*', '*', '*', '*', '*', '*', '*', '*']],
-                              {'8', '7', '2', '3', '1', '4', '6', '9', '5'})
+                              {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
         solved = depth_first_solve(puzzle)
         if not solved:
             self.fail("No solution found when there should be a solution.")
@@ -141,7 +141,7 @@ class TestSudoku(unittest.TestCase):
                                   ['5', '*', '*', '*', '*', '*', '*', '7', '3'],
                                   ['*', '*', '2', '*', '1', '*', '*', '*', '*'],
                                   ['*', '*', '*', '*', '4', '*', '*', '*', '9']],
-                              {'5', '3', '1', '9', '2', '6', '7', '4', '8'})
+                              {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
         solved = depth_first_solve(puzzle)
         if not solved:
             self.fail("No solution found when there should be a solution.")
@@ -162,7 +162,7 @@ class TestSudoku(unittest.TestCase):
                                   ['*', '*', '1', '*', '*', '*', '*', '6', '8'],
                                   ['*', '*', '8', '5', '*', '*', '*', '1', '*'],
                                   ['*', '9', '*', '*', '*', '*', '4', '*', '*']],
-                              {'6', '9', '4', '7', '2', '1', '3', '8', '5'})
+                              {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
         solved = depth_first_solve(puzzle)
         if not solved:
             self.fail("No solution found when there should be a solution.")
