@@ -59,7 +59,7 @@ Input response here: n
 
 Process finished with exit code 0
 ```
-
+### Pushing the boundaries
 This solver can *theoretically* solve any *n* x *n* puzzle (where *n* is a perfect square). But because the general problem of solving Sudoku puzzles is known to be [NP-complete](https://en.wikipedia.org/wiki/NP-completeness "Wikipedia: NP-completeness"), this means that the time taken to solve progressively larger puzzles increases very rapidly.
 
 Here is a sample of the program trying to solve an empty 16 x 16 puzzle:
