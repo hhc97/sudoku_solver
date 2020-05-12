@@ -37,6 +37,6 @@ def test_performance(filename: str) -> None:
 
 
 if __name__ == '__main__':
-    test_performance("puzzles.txt")
-    test_performance("euler_sudokus.txt")
-    test_performance("hardest.txt")
+    test_performance("test_files/puzzles.txt")
+    test_performance("test_files/euler_sudokus.txt")
+    test_performance("test_files/hardest.txt")
