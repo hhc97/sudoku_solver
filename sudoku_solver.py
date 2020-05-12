@@ -136,16 +136,16 @@ class SudokuPuzzle:
         """
         Returns an easily readable string representation of the current puzzle.
         """
-        string, n = '', round(self._n ** (1 / 2))
-        div = '-' * n + ('+' + '-' * n) * (n - 1) + '\n'
+        string_repr, n = [], round(self._n ** (1 / 2))
+        div = '--' * n + ('+' + '-' + '--' * n) * (n - 2) + '+' + '--' * n
         for i in range(self._n):
             if i > 0 and i % n == 0:
-                string += div
+                string_repr.append(div)
             row_lst = self._symbols[i][:]
             for index in range(n, self._n, n + 1):
                 row_lst.insert(index, '|')
-            string += ''.join(row_lst) + '\n'
-        return string.rstrip()
+            string_repr.append(' '.join(row_lst))
+        return '\n'.join(string_repr)
 
     def is_solved(self) -> bool:
         """
@@ -313,5 +313,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    print('Welcome to Sudoku Solver v1.0 by Haocheng Hu\n')
+    print('Welcome to Sudoku Solver v1.1 by Haocheng Hu\n')
     main()

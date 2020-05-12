@@ -11,6 +11,8 @@ If you find any bugs or have any suggestions for improvement, please send me an 
 
 Sample run of the program:
 ```
+Welcome to Sudoku Solver v1.1 by Haocheng Hu
+
 Please type in row 1:-9--1-8
 Please type in row 2:713-59-2
 Please type in row 3:---3-2--9
@@ -22,35 +24,35 @@ Please type in row 8:-3-29-748
 Please type in row 9:--2-4--5
 
 Input puzzle:
-*9*|*1*|8**
-713|*59|*2*
-***|3*2|**9
----+---+---
-427|***|***
-**9|***|2**
-***|***|487
----+---+---
-9**|5*8|***
-*3*|29*|748
-**2|*4*|*5*
+* 9 * | * 1 * | 8 * *
+7 1 3 | * 5 9 | * 2 *
+* * * | 3 * 2 | * * 9
+------+-------+------
+4 2 7 | * * * | * * *
+* * 9 | * * * | 2 * *
+* * * | * * * | 4 8 7
+------+-------+------
+9 * * | 5 * 8 | * * *
+* 3 * | 2 9 * | 7 4 8
+* * 2 | * 4 * | * 5 *
 Solving...
 
 Solved!
 
 Solution:
-295|614|873
-713|859|624
-648|372|519
----+---+---
-427|186|395
-859|437|261
-361|925|487
----+---+---
-974|568|132
-536|291|748
-182|743|956
+2 9 5 | 6 1 4 | 8 7 3
+7 1 3 | 8 5 9 | 6 2 4
+6 4 8 | 3 7 2 | 5 1 9
+------+-------+------
+4 2 7 | 1 8 6 | 3 9 5
+8 5 9 | 4 3 7 | 2 6 1
+3 6 1 | 9 2 5 | 4 8 7
+------+-------+------
+9 7 4 | 5 6 8 | 1 3 2
+5 3 6 | 2 9 1 | 7 4 8
+1 8 2 | 7 4 3 | 9 5 6
 
-Solved in 0.014966726303100586 seconds.
+Solved in 0.013964653015136719 seconds.
 
 Would you like to solve another puzzle? (enter 'y' to try again)
 Input response here: n
