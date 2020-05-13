@@ -197,7 +197,7 @@ class SudokuPuzzle:
                 new_symbols[pos[0]][pos[1]] = symbol
                 new_map = self._map.copy()
                 for key in self._get_positions(pos):
-                    new_map[key] = {i for i in self._map[key] if i != symbol}
+                    new_map[key] = self._map[key] - {symbol}
                 del new_map[pos]
                 extensions.append(SudokuPuzzle(self._n, new_symbols,
                                                self._symbol_set, new_map))
@@ -207,7 +207,7 @@ class SudokuPuzzle:
                 new_symbols[position[0]][position[1]] = value
                 new_map = self._map.copy()
                 for key in self._get_positions(position):
-                    new_map[key] = {i for i in self._map[key] if i != value}
+                    new_map[key] = self._map[key] - {value}
                 del new_map[position]
                 extensions.append(SudokuPuzzle(self._n, new_symbols,
                                                self._symbol_set, new_map))
