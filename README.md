@@ -180,6 +180,4 @@ Solved in 209.4494128227234 seconds.
 ```
 Of course, since the 16 x 16 and 25 x 25 puzzles started with an empty grid, this is not so much *solving* a puzzle as simply finding one of the *countably infinite*<sup id="s1">[1](#f1)</sup> solutions. For the sake of my computer, and due to the lack of characters in the English alphabet, I've decided not to go further than this.
 
-<sup id="f1">1</sup> <sub>Yes, it's not actually "countably infinite".</sub>
-
-<sub>But with the normal 9x9 Sudoku having [6,670,903,752,021,072,936,960](https://en.wikipedia.org/wiki/Mathematics_of_Sudoku#Enumerating_Sudoku_solutions "Wikipedia: Mathematics of Sudoku") possible configurations, I'd say the 25x25 is close enough. [⮌](#s1)</sub>
+<sup id="f1">1</sup> <sub>Yes, it's not actually "countably infinite". But with the normal 9x9 Sudoku having [6,670,903,752,021,072,936,960](https://en.wikipedia.org/wiki/Mathematics_of_Sudoku#Enumerating_Sudoku_solutions "Wikipedia: Mathematics of Sudoku") possible configurations, I'd say the 25x25 is close enough. [⮌](#s1)</sub>
