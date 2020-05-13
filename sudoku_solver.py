@@ -180,7 +180,7 @@ class SudokuPuzzle:
         if not self._map:
             return []
         extensions = []
-        position, possible = None, {i for i in range(self._n + 1)}
+        position, possible = None, self._symbol_set | {'*'}
         for pos, values in self._map.items():
             if len(values) < len(possible):
                 position, possible = pos, values
