@@ -179,7 +179,8 @@ class SudokuPuzzle:
         """
         if not self._map:
             return []
-        position, possible, lst = None, {i for i in range(self._n + 1)}, []
+        extensions = []
+        position, possible = None, {i for i in range(self._n + 1)}
         for pos, values in self._map.items():
             if len(values) < len(possible):
                 position, possible = pos, values
@@ -198,8 +199,8 @@ class SudokuPuzzle:
                 for key in self._get_positions(pos):
                     new_map[key] = {i for i in self._map[key] if i != symbol}
                 del new_map[pos]
-                lst.append(SudokuPuzzle(self._n, new_symbols,
-                                        self._symbol_set, new_map))
+                extensions.append(SudokuPuzzle(self._n, new_symbols,
+                                               self._symbol_set, new_map))
         else:
             for value in possible:
                 new_symbols = [row[:] for row in self._symbols]
@@ -208,9 +209,9 @@ class SudokuPuzzle:
                 for key in self._get_positions(position):
                     new_map[key] = {i for i in self._map[key] if i != value}
                 del new_map[position]
-                lst.append(SudokuPuzzle(self._n, new_symbols,
-                                        self._symbol_set, new_map))
-        return lst
+                extensions.append(SudokuPuzzle(self._n, new_symbols,
+                                               self._symbol_set, new_map))
+        return extensions
 
     def _get_positions(self, pos: tuple) -> List[Tuple[int, int]]:
         # returns the keys of sets in _map that may need to be altered
