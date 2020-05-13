@@ -96,35 +96,38 @@ class SudokuPuzzle:
         # updates _set_map with missing symbols for each set
         # and the positions they could possibly occupy within the set
         for r in range(self._n):
-            self._set_map[f'row{r}'] = {}
+            set_name = f'row{r}'
+            self._set_map[set_name] = {}
             row_set = self._row_set(r)
             missing_symbols = self._symbol_set - row_set
             for sym in missing_symbols:
-                self._set_map[f'row{r}'][sym] = set()
+                self._set_map[set_name][sym] = set()
                 for key, value in self._map.items():
                     if key[0] == r and sym in value:
-                        self._set_map[f'row{r}'][sym].add(key)
+                        self._set_map[set_name][sym].add(key)
         for c in range(self._n):
-            self._set_map[f'col{c}'] = {}
+            set_name = f'col{c}'
+            self._set_map[set_name] = {}
             col_set = self._column_set(c)
             missing_symbols = self._symbol_set - col_set
             for sym in missing_symbols:
-                self._set_map[f'col{c}'][sym] = set()
+                self._set_map[set_name][sym] = set()
                 for key, value in self._map.items():
                     if key[1] == c and sym in value:
-                        self._set_map[f'col{c}'][sym].add(key)
+                        self._set_map[set_name][sym].add(key)
         n = round(self._n ** (1 / 2))
         for r in range(0, self._n, n):
             for c in range(0, self._n, n):
-                self._set_map[f'ss{r // n}{c // n}'] = {}
+                set_name = f'ss{r // n}{c // n}'
+                self._set_map[set_name] = {}
                 subsq_set = self._subsquare_set(r, c)
                 missing_symbols = self._symbol_set - subsq_set
                 for sym in missing_symbols:
-                    self._set_map[f'ss{r // n}{c // n}'][sym] = set()
+                    self._set_map[set_name][sym] = set()
                     for key, value in self._map.items():
                         if key[0] // n == r // n and key[1] // n == c // n \
                                 and sym in value:
-                            self._set_map[f'ss{r // n}{c // n}'][sym].add(key)
+                            self._set_map[set_name][sym].add(key)
 
     def get_symbols(self) -> List[List[str]]:
         """
