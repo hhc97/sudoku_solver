@@ -1,6 +1,6 @@
 """
-A module to test the performance of the solver by getting it to solve a set of puzzles.
-Checker correctness is not checked, only the solve times are recorded.
+A module that tests the performance of the solver by getting it to solve a set of puzzles.
+Solver correctness is not checked, only the solve times are recorded.
 """
 
 from datetime import datetime
