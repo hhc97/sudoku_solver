@@ -180,66 +180,41 @@ class SudokuPuzzle:
         checks for hidden singles. Again, if none are found, it fills in the
         spot with the least number of naked/hidden possibilities.
         """
-        symbols, symbol_set, n = self._symbols, self._symbol_set, self._n
-        if not any("*" in row for row in symbols):
+        if not self._map:
             return []
+        extensions = []
+        position, possible = None, self._symbol_set | {'*'}
+        for pos, values in self._map.items():
+            if len(values) < len(possible):
+                position, possible = pos, values
+        symbol, possible_positions = None, None
+        if len(possible) > 1:
+            self._populate_set_map()
+            for d in self._set_map.values():
+                for sym, positions in d.items():
+                    if len(positions) < len(possible):
+                        symbol, possible_positions, = sym, positions
+        if symbol:
+            for pos in possible_positions:
+                new_symbols = [row[:] for row in self._symbols]
+                new_symbols[pos[0]][pos[1]] = symbol
+                new_map = self._map.copy()
+                for key in self._get_positions(pos):
+                    new_map[key] = self._map[key] - {symbol}
+                del new_map[pos]
+                extensions.append(SudokuPuzzle(self._n, new_symbols,
+                                               self._symbol_set, new_map))
         else:
-            # get position of first empty position
-            r = 0  # row with first empty position
-            while "*" not in symbols[r]:
-                r += 1
-            c = symbols[r].index("*")  # column with first empty position
-
-            # allowed symbols at position (r, c)
-            # A | B == A.union(B)
-            allowed_symbols = (self._symbol_set -
-                               (self._row_set(r) |
-                                self._column_set(c) |
-                                self._subsquare_set(r, c)))
-
-            # list of SudokuPuzzles with each legal digit at position i
-            return_lst = []
-            for symbol in allowed_symbols:
-                new_puzzle = SudokuPuzzle(n, symbols[:r] +
-                                          [symbols[r][:c] + [symbol] + symbols[r][c + 1:]] +
-                                          symbols[r + 1:], symbol_set)
-                return_lst.append(new_puzzle)
-            return return_lst
-        # if not self._map:
-        #     return []
-        # extensions = []
-        # position, possible = None, self._symbol_set | {'*'}
-        # for pos, values in self._map.items():
-        #     if len(values) < len(possible):
-        #         position, possible = pos, values
-        # symbol, possible_positions = None, None
-        # if len(possible) > 1:
-        #     self._populate_set_map()
-        #     for d in self._set_map.values():
-        #         for sym, positions in d.items():
-        #             if len(positions) < len(possible):
-        #                 symbol, possible_positions, = sym, positions
-        # if symbol:
-        #     for pos in possible_positions:
-        #         new_symbols = [row[:] for row in self._symbols]
-        #         new_symbols[pos[0]][pos[1]] = symbol
-        #         new_map = self._map.copy()
-        #         for key in self._get_positions(pos):
-        #             new_map[key] = self._map[key] - {symbol}
-        #         del new_map[pos]
-        #         extensions.append(SudokuPuzzle(self._n, new_symbols,
-        #                                        self._symbol_set, new_map))
-        # else:
-        #     for value in possible:
-        #         new_symbols = [row[:] for row in self._symbols]
-        #         new_symbols[position[0]][position[1]] = value
-        #         new_map = self._map.copy()
-        #         for key in self._get_positions(position):
-        #             new_map[key] = self._map[key] - {value}
-        #         del new_map[position]
-        #         extensions.append(SudokuPuzzle(self._n, new_symbols,
-        #                                        self._symbol_set, new_map))
-        # return extensions
+            for value in possible:
+                new_symbols = [row[:] for row in self._symbols]
+                new_symbols[position[0]][position[1]] = value
+                new_map = self._map.copy()
+                for key in self._get_positions(position):
+                    new_map[key] = self._map[key] - {value}
+                del new_map[position]
+                extensions.append(SudokuPuzzle(self._n, new_symbols,
+                                               self._symbol_set, new_map))
+        return extensions
 
     def _get_positions(self, pos: tuple) -> List[Tuple[int, int]]:
         # returns the keys of sets in _map that may need to be altered
