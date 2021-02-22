@@ -245,7 +245,6 @@ def depth_first_solve(puzzle: SudokuPuzzle) -> Optional[SudokuPuzzle]:
     """
     An iterative depth first search to solve the puzzle.
     """
-    return None
     if puzzle.is_solved():
         return puzzle
     puzzle_queue = puzzle.extensions()
