@@ -9,7 +9,7 @@ For more information, view the README.
 
 ===== MIT License =====
 
-Copyright (c) 2019 Haocheng Hu
+Copyright (c) 2019-2021 Haocheng Hu
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -226,7 +226,7 @@ def depth_first_solve(puzzle: SudokuPuzzle) -> Optional[SudokuPuzzle]:
         return puzzle
     puzzle_queue = puzzle.extensions()
     while puzzle_queue:
-        curr = puzzle_queue.pop(0)
+        curr = puzzle_queue.pop()
         if curr.is_solved():
             return curr
         puzzle_queue.extend(curr.extensions())
