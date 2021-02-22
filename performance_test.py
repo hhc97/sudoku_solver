@@ -51,7 +51,7 @@ def test_performance(filename: str) -> None:
              f'Average time per puzzle: {average_solve_time}\n' \
              f'Max time: {max(times)}\n' \
              f'Processor speeds: {speed_begin, speed_end} ({"unstable" if unstable else "stable"})\n' \
-             f'Relative performance: {(average_cpu_speed / 100_000) * average_solve_time}\n'
+             f'Relative performance: {1_000_000 / (average_cpu_speed * average_solve_time)}\n'
 
     with open('progress.txt', 'a') as log:
         log.write(f'{str(datetime.now())[:-7]} (File: {filename})')

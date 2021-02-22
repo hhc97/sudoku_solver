@@ -46,27 +46,27 @@ Max time: 2.0656325817108154
 
 ==== Relative performance numbers added ====
 
-2021-02-22 02:16:37 (File: test_files/puzzles.txt)
+2021-02-22 02:26:45 (File: test_files/puzzles.txt)
 Puzzles solved: 106
-Total time taken: 19.933759450912476
-Average time per puzzle: 0.18805433444257053
-Max time: 0.8380119800567627
-Processor speeds: (3224518.8, 3318081.2) (stable)
-Relative performance: 6.15182144261981
+Total time taken: 20.14962649345398
+Average time per puzzle: 0.19009081597598093
+Max time: 0.9930000305175781
+Processor speeds: (3235446.8, 3162117.8) (stable)
+Relative performance: 1.6445768812082555
 
-2021-02-22 02:16:48 (File: test_files/euler_sudokus.txt)
+2021-02-22 02:26:56 (File: test_files/euler_sudokus.txt)
 Puzzles solved: 50
-Total time taken: 0.7589504718780518
-Average time per puzzle: 0.015179009437561035
-Max time: 0.04999876022338867
-Processor speeds: (3211718.4, 3163318.2) (stable)
-Relative performance: 0.48383370358098504
+Total time taken: 0.7329111099243164
+Average time per puzzle: 0.014658222198486328
+Max time: 0.03399229049682617
+Processor speeds: (3247629.6, 3215206.6) (stable)
+Relative performance: 21.11181375932422
 
-2021-02-22 02:17:13 (File: test_files/hardest.txt)
+2021-02-22 02:27:21 (File: test_files/hardest.txt)
 Puzzles solved: 20
-Total time taken: 14.85496211051941
-Average time per puzzle: 0.7427481055259705
-Max time: 4.056033611297607
-Processor speeds: (3213459.4, 3169776.6) (stable)
-Relative performance: 23.705682230625868
+Total time taken: 14.906831741333008
+Average time per puzzle: 0.7453415870666504
+Max time: 4.0410003662109375
+Processor speeds: (3246287.6, 3115689.4) (stable)
+Relative performance: 0.42177666369461225
 
