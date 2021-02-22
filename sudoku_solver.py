@@ -187,7 +187,7 @@ class SudokuPuzzle:
         for pos, values in self._map.items():
             if len(values) < len(possible):
                 position, possible = pos, values
-                break
+                # break
         symbol, possible_positions = None, None
         # if len(possible) > 1:
         #     self._populate_set_map()
