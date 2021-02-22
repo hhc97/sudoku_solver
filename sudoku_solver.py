@@ -226,7 +226,7 @@ def depth_first_solve(puzzle: SudokuPuzzle) -> Optional[SudokuPuzzle]:
         return puzzle
     puzzle_queue = puzzle.extensions()
     while puzzle_queue:
-        curr = puzzle_queue.pop()
+        curr = puzzle_queue.pop(0)
         if curr.is_solved():
             return curr
         puzzle_queue.extend(curr.extensions())
