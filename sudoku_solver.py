@@ -115,19 +115,19 @@ class SudokuPuzzle:
                 for key, value in self._map.items():
                     if key[1] == c and sym in value:
                         self._set_map[set_name][sym].add(key)
-        n = round(self._n ** (1 / 2))
-        for r in range(0, self._n, n):
-            for c in range(0, self._n, n):
-                set_name = f'ss{r // n}{c // n}'
-                self._set_map[set_name] = {}
-                subsq_set = self._subsquare_set(r, c)
-                missing_symbols = self._symbol_set - subsq_set
-                for sym in missing_symbols:
-                    self._set_map[set_name][sym] = set()
-                    for key, value in self._map.items():
-                        if key[0] // n == r // n and key[1] // n == c // n \
-                                and sym in value:
-                            self._set_map[set_name][sym].add(key)
+        # n = round(self._n ** (1 / 2))
+        # for r in range(0, self._n, n):
+        #     for c in range(0, self._n, n):
+        #         set_name = f'ss{r // n}{c // n}'
+        #         self._set_map[set_name] = {}
+        #         subsq_set = self._subsquare_set(r, c)
+        #         missing_symbols = self._symbol_set - subsq_set
+        #         for sym in missing_symbols:
+        #             self._set_map[set_name][sym] = set()
+        #             for key, value in self._map.items():
+        #                 if key[0] // n == r // n and key[1] // n == c // n \
+        #                         and sym in value:
+        #                     self._set_map[set_name][sym].add(key)
 
     def get_symbols(self) -> List[List[str]]:
         """
@@ -188,12 +188,12 @@ class SudokuPuzzle:
             if len(values) < len(possible):
                 position, possible = pos, values
         symbol, possible_positions = None, None
-        # if len(possible) > 1:
-        #     self._populate_set_map()
-        #     for d in self._set_map.values():
-        #         for sym, positions in d.items():
-        #             if len(positions) < len(possible):
-        #                 symbol, possible_positions, = sym, positions
+        if len(possible) > 1:
+            self._populate_set_map()
+            for d in self._set_map.values():
+                for sym, positions in d.items():
+                    if len(positions) < len(possible):
+                        symbol, possible_positions, = sym, positions
         if symbol:
             for pos in possible_positions:
                 new_symbols = [row[:] for row in self._symbols]
