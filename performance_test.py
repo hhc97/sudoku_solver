@@ -44,12 +44,13 @@ def test_performance(filename: str) -> None:
             print(f'{solution}\n')
     speed_end = measure_cpu_speed(5)
     unstable = max(speed_begin, speed_end) / min(speed_begin, speed_end) > 1.10
+    average_solve_time = sum(times) / len(times)
     result = f'Puzzles solved: {len(times)}\n' \
              f'Total time taken: {sum(times)}\n' \
-             f'Average time per puzzle: {sum(times) / len(times)}\n' \
+             f'Average time per puzzle: {average_solve_time}\n' \
              f'Max time: {max(times)}\n' \
              f'Processor speeds: {speed_begin, speed_end} ({"unstable" if unstable else "stable"})\n' \
-             f'Relative performance: {(speed_begin / 100_000) / (sum(times) / len(times))}\n'
+             f'Relative performance: {(speed_begin / 100_000) / (1 / average_solve_time)}\n'
 
     with open('progress.txt', 'a') as log:
         log.write(f'{str(datetime.now())[:-7]} (File: {filename})')
