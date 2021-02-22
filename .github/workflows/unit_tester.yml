@@ -1,1 +1,33 @@
+name: solver_checks
 
+on: [push]
+
+jobs:
+  check_correctness:
+    runs-on: ubuntu-latest
+    steps:
+      # checks out repo and upgrades python version
+      - uses: actions/checkout@v2
+      - name: upgrade python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.x'
+      # verify python version
+      - run: python3 --version
+      - name: correctness_tests
+        run: |
+          python3 sudoku_tests.py
+  check_performance:
+    runs-on: ubuntu-latest
+    steps:
+      # checks out repo and upgrades python version
+      - uses: actions/checkout@v2
+      - name: upgrade python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.x'
+      # verify python version
+      - run: python3 --version
+      - name: performance_tests
+        run: |
+          python3 performance_test.py
