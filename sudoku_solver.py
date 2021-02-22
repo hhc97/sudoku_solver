@@ -187,14 +187,13 @@ class SudokuPuzzle:
         for pos, values in self._map.items():
             if len(values) < len(possible):
                 position, possible = pos, values
-                # break
         symbol, possible_positions = None, None
-        # if len(possible) > 1:
-        #     self._populate_set_map()
-        #     for d in self._set_map.values():
-        #         for sym, positions in d.items():
-        #             if len(positions) < len(possible):
-        #                 symbol, possible_positions, = sym, positions
+        if len(possible) > 1:
+            self._populate_set_map()
+            for d in self._set_map.values():
+                for sym, positions in d.items():
+                    if len(positions) < len(possible):
+                        symbol, possible_positions, = sym, positions
         if symbol:
             for pos in possible_positions:
                 new_symbols = [row[:] for row in self._symbols]
