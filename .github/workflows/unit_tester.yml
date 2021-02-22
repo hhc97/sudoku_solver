@@ -31,3 +31,4 @@ jobs:
       - name: performance_tests
         run: |
           python3 performance_test.py
+          cat progress.txt
