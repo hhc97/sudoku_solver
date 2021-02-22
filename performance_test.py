@@ -48,7 +48,7 @@ def test_performance(filename: str) -> None:
              f'Total time taken: {sum(times)}\n' \
              f'Average time per puzzle: {sum(times) / len(times)}\n' \
              f'Max time: {max(times)}\n' \
-             f'Processor speed: {speed_begin} ({"unstable" if unstable else "stable"})\n' \
+             f'Processor speeds: {speed_begin, speed_end} ({"unstable" if unstable else "stable"})\n' \
              f'Relative performance: {(speed_begin / 100_000) / (sum(times) / len(times))}\n'
 
     with open('progress.txt', 'a') as log:
