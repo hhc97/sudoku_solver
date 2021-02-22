@@ -38,6 +38,7 @@ def test_performance(filename: str) -> None:
             start = time()
             solution = depth_first_solve(puzzle)
             end = time()
+            assert solution is not None, 'valid solution exists but not found'
             times.append(end - start)
             print(f'Input puzzle:\n{puzzle}')
             print(f'\nSolved in {end - start:.4f} seconds.\n')
