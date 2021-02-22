@@ -1,4 +1,5 @@
 # Sudoku solver
+[![solver_checks](https://github.com/hhc97/sudoku_solver/actions/workflows/unit_tester.yml/badge.svg)](https://github.com/hhc97/sudoku_solver/actions/workflows/unit_tester.yml)
 A modestly fast Sudoku solver implemented in Python.
 
 This solver is optimized to solve the puzzle using a depth first search that tries to reduce the branching factor at every level as far as possible. Depending on the hardware, approximate solve times are below 0.05 seconds for most puzzles, with the hardest ones taking below 1 second (but these are very rare). The program can also determine that a given puzzle is unsolvable in a similar amount of time.
