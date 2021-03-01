@@ -1,5 +1,5 @@
 """
-A set of basic unittests to ensure every revision of the solver works.
+A set of basic unittests to ensure that every revision of the solver works.
 """
 
 import unittest
@@ -9,8 +9,8 @@ from sudoku_solver import SudokuPuzzle, depth_first_solve
 
 class TestSudoku(unittest.TestCase):
     """
-    a few tests for the solver, to make sure everything is working properly
-    after every revision
+    A class that contains a few sanity checks for the solver, followed by a few
+    test puzzles to verify that it can come up with a correct solution.
     """
 
     def test_solved_completed_puzzle(self):
